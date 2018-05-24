@@ -1,0 +1,11 @@
+{
+  "name": "i-h9otx1m9",
+  "address": "10.59.255.108",
+  "subscribers": [
+    "webserver",
+    "docker",
+    "database"
+  ],
+  "timestamp": 1491489044,
+  "version": "0.28.5"
+}

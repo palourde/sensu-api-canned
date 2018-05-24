@@ -1,0 +1,16 @@
+{
+  "name": "i-roa5ks51",
+  "address": "10.186.91.175",
+  "subscribers": [
+    "chef",
+    "consul",
+    "database",
+    "docker",
+    "linux",
+    "webserver",
+    "website"
+  ],
+  "timestamp": 1491574136,
+  "version": "0.28.5",
+  "cpu": "http://s.mfhg.io/Rqm5o88vfr7yXYpEeR_EvQ?force_image=.jpg"
+}

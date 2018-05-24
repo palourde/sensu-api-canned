@@ -1,0 +1,308 @@
+[
+  {
+    "name": "chef_client",
+    "command": "check-procs.rb -p /usr/bin/chef-client -W 1 -w 2 -c 3",
+    "subscribers": [
+      "chef"
+    ],
+    "interval": 60,
+    "output": "CheckProcs: Found 0 matching processes",
+    "check": "chef_client",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "chef_client",
+      "output": "CheckProcs: Found 0 matching processes",
+      "status": 3
+    }
+  },
+  {
+    "name": "check_consul_failures",
+    "command": "check-consul-failures.rb -s 127.0.0.1 -p 8500",
+    "subscribers": [
+      "consul"
+    ],
+    "interval": 60,
+    "output": "CheckConsulFailures: Consul is not responding",
+    "check": "check_consul_failures",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_consul_failures",
+      "output": "CheckConsulFailures: Consul is not responding",
+      "status": 2
+    }
+  },
+  {
+    "name": "check_consul_kv_ttl",
+    "command": "check-consul-kv-ttl.rb -kv 'ttl/service/tag' -w 30 -c 60",
+    "subscribers": [
+      "consul"
+    ],
+    "interval": 60,
+    "output": "CheckConsulKVTTL: Expired! Elapsed Time: 81",
+    "check": "check_consul_kv_ttl",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_consul_kv_ttl",
+      "output": "CheckConsulKVTTL: Expired! Elapsed Time: 81",
+      "status": 1
+    }
+  },
+  {
+    "name": "check_consul_leader",
+    "command": "check-consul-leader.rb -s 127.0.0.1 -p 8500",
+    "subscribers": [
+      "consul"
+    ],
+    "interval": 60,
+    "output": "CheckConsulLeader: Consul is UP, but it has NO leader",
+    "check": "check_consul_leader",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_consul_leader",
+      "output": "CheckConsulLeader: Consul is UP, but it has NO leader",
+      "status": 2
+    }
+  },
+  {
+    "name": "check_consul_members",
+    "command": "check-consul-members.rb -s 127.0.0.1 -p 8500 -g 5 -e 8",
+    "subscribers": [
+      "consul"
+    ],
+    "interval": 60,
+    "output": "CheckConsulMembers: 2 peers is below critical threshold of 5",
+    "check": "check_consul_members",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_consul_members",
+      "output": "CheckConsulMembers: 2 peers is below critical threshold of 5",
+      "status": 2
+    }
+  },
+  {
+    "name": "check_consul_servers",
+    "command": "check-consul-servers.rb -s 127.0.0.1 -p 8500 -g 3 -e 5",
+    "subscribers": [
+      "consul"
+    ],
+    "interval": 60,
+    "output": "CheckConsulServers: 4 peers is outside of expected count of 5",
+    "check": "check_consul_servers",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_consul_servers",
+      "output": "CheckConsulServers: 4 peers is outside of expected count of 5",
+      "status": 3
+    }
+  },
+  {
+    "name": "check_mysql_aliveness",
+    "command": "check-mysql-alive.rb -h 127.0.0.1 --init '/etc/sensu/my.cnf'",
+    "subscribers": [
+      "database"
+    ],
+    "interval": 60,
+    "output": "CheckMySQLAlive: Error message: ERROR 2002: Can't connect to local MySQL server through socket",
+    "check": "check_mysql_aliveness",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_mysql_aliveness",
+      "output": "CheckMySQLAlive: Error message: ERROR 2002: Can't connect to local MySQL server through socket",
+      "status": 1
+    }
+  },
+  {
+    "name": "check_mysql_replication",
+    "command": "check-mysql-replication-status.rb -h 127.0.0.1 --init '/etc/sensu/my.cnf'",
+    "subscribers": [
+      "database"
+    ],
+    "interval": 60,
+    "output": "CheckMySQLReplication: replication delayed by 26",
+    "check": "check_mysql_replication",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_mysql_replication",
+      "output": "CheckMySQLReplication: replication delayed by 26",
+      "status": 3
+    }
+  },
+  {
+    "name": "check_jenkins_container",
+    "command": "check-container.rb jenkins",
+    "subscribers": [
+      "docker"
+    ],
+    "interval": 60,
+    "output": "CheckJenkinsContainer: jenkins is not running on 127.0.0.1:2375",
+    "check": "check_jenkins_container",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_jenkins_container",
+      "output": "CheckJenkinsContainer: jenkins is not running on 127.0.0.1:2375",
+      "status": 3
+    }
+  },
+  {
+    "name": "check_docker_logs",
+    "command": "check-container-logs.rb -H /var/run/docker.sock -n logspout -r 'problem sending' -r 'i/o timeout' -i 'Remark:' -i 'The configuration is'",
+    "subscribers": [
+      "docker"
+    ],
+    "interval": 60,
+    "output": "CheckDockerLogs: An error occurred trying to connect: Get https://10.73.121:2376/v1.18/containers/json: remote error: bad certificate",
+    "check": "check_docker_logs",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_docker_logs",
+      "output": "CheckDockerLogs: An error occurred trying to connect: Get https://10.73.121:2376/v1.18/containers/json: remote error: bad certificate",
+      "status": 3
+    }
+  },
+  {
+    "name": "check_cpu",
+    "command": "check-cpu.rb -w 80 -c 100",
+    "subscribers": [
+      "linux"
+    ],
+    "interval": 30,
+    "ttl": 100,
+    "output": "CheckCPU: total=99.75 user=99.5 nice=0.0 system=0.25 idle=0.25 iowait=0.0 irq=0.0 softirq=0.0",
+    "check": "check_cpu",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_cpu",
+      "output": "CheckCPU: total=99.75 user=99.5 nice=0.0 system=0.25 idle=0.25 iowait=0.0 irq=0.0 softirq=0.0",
+      "status": 2
+    }
+  },
+  {
+    "name": "check_disk_usage",
+    "command": "check-disk-usage.rb -w :::disk.warning|80::: -c :::disk.critical|90:::",
+    "subscribers": [
+      "linux"
+    ],
+    "interval": 30,
+    "output": "CheckDiskUsage: /data 96.07% bytes usage (386 GiB/402 GiB)",
+    "check": "check_disk_usage",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_disk_usage",
+      "output": "CheckDiskUsage: /data 96.07% bytes usage (386 GiB/402 GiB)",
+      "status": 2
+    }
+  },
+  {
+    "name": "check_load",
+    "command": "check-load.rb -w 2.75,2.5,2.0 -c 3.5,3.25,3.0",
+    "subscribers": [
+      "linux"
+    ],
+    "interval": 30,
+    "output": "CheckLoad: Total load average: 3.15, 2.79, 2.51",
+    "check": "check_load",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_load",
+      "output": "CheckLoad: Total load average: 3.15, 2.79, 2.51",
+      "status": 1
+    }
+  },
+  {
+    "name": "check_memory",
+    "command": "check-ram.rb -w 50 -c 15",
+    "subscribers": [
+      "linux"
+    ],
+    "interval": 30,
+    "output": "CheckRAM: 14% free RAM left",
+    "check": "check_memory",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_memory",
+      "output": "CheckRAM: 14% free RAM left",
+      "status": 1
+    }
+  },
+  {
+    "name": "check_ping",
+    "command": "check-ping.rb -h 10.0.0.1 -W 0.5 -C 0.2",
+    "subscribers": [
+      "linux"
+    ],
+    "interval": 30,
+    "output": "CheckPing: ICMP ping unsuccessful for host: 10.1.8.1 (successful: 0/20)",
+    "check": "check_ping",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_ping",
+      "output": "CheckPing: ICMP ping unsuccessful for host: 10.1.8.1 (successful: 0/20)",
+      "status": 2
+    }
+  },
+  {
+    "name": "check_swap",
+    "command": "check-swap.rb -w 2500 -c 3000",
+    "subscribers": [
+      "linux"
+    ],
+    "interval": 30,
+    "output": "CheckSwap: used swap memory: 2781 MB",
+    "check": "check_swap",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_swap",
+      "output": "CheckSwap: used swap memory: 2781 MB",
+      "status": 3
+    }
+  },
+  {
+    "name": "check_nginx",
+    "command": "check-nginx-status.rb -u http://127.0.0.1/nginx_status",
+    "subscribers": [
+      "webserver"
+    ],
+    "interval": 30,
+    "output": "CheckNginx: Waiting requests: 57",
+    "check": "check_nginx",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "check_nginx",
+      "output": "CheckNginx: Waiting requests: 57",
+      "status": 3
+    }
+  },
+  {
+    "name": "sensu_website",
+    "command": "check-http.rb -u https://sensuapp.org",
+    "subscribers": [
+      "website"
+    ],
+    "interval": 30,
+    "ttl": 90,
+    "output": "CheckHTTP: Connection error: incorrect header check",
+    "check": "sensu_website",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "sensu_website",
+      "output": "CheckHTTP: Connection error: incorrect header check",
+      "status": 3
+    }
+  },
+  {
+    "name": "sensu_website_cert",
+    "command": "check-ssl-host.rb -h sensuapp.org -c 7 -w 14",
+    "subscribers": [
+      "website"
+    ],
+    "interval": 30,
+    "output": "CheckSSLHost: sensuapp.org - Invalid certificate chain",
+    "check": "sensu_website_cert",
+    "last_execution": 1491500782,
+    "last_result": {
+      "name": "sensu_website_cert",
+      "output": "CheckSSLHost: sensuapp.org - Invalid certificate chain",
+      "status": 2
+    }
+  }
+]

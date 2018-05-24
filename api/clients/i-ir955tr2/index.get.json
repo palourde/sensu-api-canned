@@ -1,0 +1,15 @@
+{
+  "name": "i-ir955tr2",
+  "address": "10.197.24.40",
+  "subscribers": [
+    "chef",
+    "consul",
+    "database",
+    "docker",
+    "linux",
+    "webserver",
+    "website"
+  ],
+  "timestamp": 1491501329,
+  "version": "0.28.5"
+}

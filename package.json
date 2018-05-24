@@ -1,0 +1,14 @@
+{
+  "name": "sensu-api-canned",
+  "version": "0.0.1",
+  "description": "",
+  "main": "canned",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "canned": "~0.3.10"
+  },
+  "author": "Simon Plourde",
+  "license": "MIT"
+}

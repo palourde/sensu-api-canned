@@ -1,0 +1,182 @@
+[
+  {
+    "check": {
+      "command": "check-mysql-replication-status.rb -h 127.0.0.1 --init '/etc/sensu/my.cnf'",
+      "name": "check_mysql_replication",
+      "issued": 1527178645,
+      "output": "CheckMySQLReplication: replication delayed by 26",
+      "status": 2
+    },
+    "client": {
+      "name": "i-oa9pux7y",
+      "address": "10.230.244.199",
+      "subscriptions": [
+        "webserver",
+        "database"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-procs.rb -p /usr/bin/chef-client -W 1 -w 2 -c 3",
+      "name": "chef_client",
+      "issued": 1527178645,
+      "output": "CheckProcs: Found 0 matching processes",
+      "status": 2
+    },
+    "client": {
+      "name": "i-w2irxcr9",
+      "address": "10.174.19.248",
+      "subscriptions": [
+        "chef"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-http.rb -u https://sensuapp.org",
+      "name": "sensu_website",
+      "issued": 1527178645,
+      "output": "CheckHTTP: Connection error: incorrect header check",
+      "status": 2
+    },
+    "client": {
+      "name": "i-ydgym5gw",
+      "address": "10.124.240.200",
+      "subscriptions": [
+        "website",
+        "chef"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-mysql-alive.rb -h 127.0.0.1 --init '/etc/sensu/my.cnf'",
+      "name": "check_mysql_aliveness",
+      "issued": 1527178645,
+      "output": "CheckMySQLAlive: Error message: ERROR 2002: Can't connect to local MySQL server through socket",
+      "status": 3
+    },
+    "client": {
+      "name": "i-3j4pmb9u",
+      "address": "10.135.135.28",
+      "subscriptions": [
+        "database",
+        "webserver",
+        "linux"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-load.rb -w 2.75,2.5,2.0 -c 3.5,3.25,3.0",
+      "name": "check_load",
+      "issued": 1527178645,
+      "output": "CheckLoad: Total load average: 3.15, 2.79, 2.51",
+      "status": 1
+    },
+    "client": {
+      "name": "i-dij16orx",
+      "address": "10.226.201.225",
+      "subscriptions": [
+        "linux",
+        "webserver",
+        "website"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-ssl-host.rb -h sensuapp.org -c 7 -w 14",
+      "name": "sensu_website_cert",
+      "issued": 1527178645,
+      "output": "CheckSSLHost: sensuapp.org - Invalid certificate chain",
+      "status": 2
+    },
+    "client": {
+      "name": "i-8bqqhdyg",
+      "address": "10.123.252.138",
+      "subscriptions": [
+        "website",
+        "docker",
+        "chef"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-mysql-replication-status.rb -h 127.0.0.1 --init '/etc/sensu/my.cnf'",
+      "name": "check_mysql_replication",
+      "issued": 1527178645,
+      "output": "CheckMySQLReplication: replication delayed by 26",
+      "status": 1
+    },
+    "client": {
+      "name": "i-6bduphvq",
+      "address": "10.195.99.18",
+      "subscriptions": [
+        "database"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-nginx-status.rb -u http://127.0.0.1/nginx_status",
+      "name": "check_nginx",
+      "issued": 1527178645,
+      "output": "CheckNginx: Waiting requests: 57",
+      "status": 3
+    },
+    "client": {
+      "name": "i-lqxq6gs1",
+      "address": "10.33.184.175",
+      "subscriptions": [
+        "webserver"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-nginx-status.rb -u http://127.0.0.1/nginx_status",
+      "name": "check_nginx",
+      "issued": 1527178645,
+      "output": "CheckNginx: Waiting requests: 57",
+      "status": 1
+    },
+    "client": {
+      "name": "i-lh0x280r",
+      "address": "10.216.47.208",
+      "subscriptions": [
+        "webserver",
+        "linux",
+        "docker"
+      ]
+    },
+    "last_ok": 1527178645
+  },
+  {
+    "check": {
+      "command": "check-container-logs.rb -H /var/run/docker.sock -n logspout -r 'problem sending' -r 'i/o timeout' -i 'Remark:' -i 'The configuration is'",
+      "name": "check_docker_logs",
+      "issued": 1527178645,
+      "output": "CheckDockerLogs: An error occurred trying to connect: Get https://10.73.121:2376/v1.18/containers/json: remote error: bad certificate",
+      "status": 3
+    },
+    "client": {
+      "name": "i-m7g7emdy",
+      "address": "10.64.245.216",
+      "subscriptions": [
+        "docker"
+      ]
+    },
+    "last_ok": 1527178645
+  }
+]

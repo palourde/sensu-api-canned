@@ -1,0 +1,15 @@
+{
+  "name": "i-3ze3ukmd",
+  "address": "10.129.102.67",
+  "subscribers": [
+    "chef",
+    "consul",
+    "database",
+    "docker",
+    "linux",
+    "webserver",
+    "website"
+  ],
+  "timestamp": 1491501862,
+  "version": "0.28.5"
+}

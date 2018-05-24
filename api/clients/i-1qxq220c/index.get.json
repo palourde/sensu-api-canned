@@ -1,0 +1,15 @@
+{
+  "name": "i-1qxq220c",
+  "address": "10.81.117.87",
+  "subscribers": [
+    "chef",
+    "consul",
+    "database",
+    "docker",
+    "linux",
+    "webserver",
+    "website"
+  ],
+  "timestamp": 1491502293,
+  "version": "0.28.5"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "i-ehvm0bcl",
+  "address": "10.149.142.235",
+  "subscribers": [
+    "linux",
+    "webserver",
+    "consul"
+  ],
+  "timestamp": 1491489044,
+  "version": "0.28.5"
+}

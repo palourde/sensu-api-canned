@@ -1,0 +1,15 @@
+{
+  "name": "i-pngs3498",
+  "address": "10.142.65.154",
+  "subscribers": [
+    "chef",
+    "consul",
+    "database",
+    "docker",
+    "linux",
+    "webserver",
+    "website"
+  ],
+  "timestamp": 1491520113,
+  "version": "0.28.5"
+}

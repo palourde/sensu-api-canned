@@ -1,0 +1,16 @@
+[
+    {
+        "path": "silence/bar/website",
+        "content": {
+            "timestamp": 1383441836
+        },
+        "expire": 3600
+    },
+    {
+        "path": "silence/qux",
+        "content": {
+            "timestamp": 1381350802
+        },
+        "expire": -1
+    }
+]

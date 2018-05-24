@@ -1,0 +1,16 @@
+{
+  "name": "i-qsgqmh6r",
+  "address": "10.164.202.15",
+  "subscribers": [
+    "chef",
+    "consul",
+    "database",
+    "docker",
+    "linux",
+    "webserver",
+    "website"
+  ],
+  "timestamp": 1492023859,
+  "version": "0.28.5",
+  "cpu": "https://www.hostedgraphite.com/d70c9eeb/graphite/render/?from=09%3A00_20170410&until=12%3A00_20170410&width=400&height=250&target=com.sensuapp.demo.cpu.user&target=com.sensuapp.demo.cpu.steal&target=com.sensuapp.demo.cpu.system&_uniq=0.736130523628497&bgcolor=white&fgcolor=black&force_image=.jpg"
+}

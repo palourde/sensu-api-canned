@@ -1,0 +1,19 @@
+{
+    "sensu": {
+        "version": "0.13.0"
+    },
+    "transport": {
+        "keepalives": {
+            "messages": 0,
+            "consumers": 1
+        },
+        "results": {
+            "messages": 0,
+            "consumers": 1
+        },
+        "connected": true
+    },
+    "redis": {
+        "connected": true
+    }
+}
